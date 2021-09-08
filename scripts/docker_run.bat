@@ -1,1 +1,1 @@
-docker run -it --rm nclgbd/asltrain
+docker run -it --rm nclgbd/githubactions:develop

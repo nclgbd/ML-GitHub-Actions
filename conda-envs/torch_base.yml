@@ -3,11 +3,10 @@ channels:
   - pytorch
   - defaults
 dependencies:
-  - cpuonly
   - cudatoolkit=10.2
   - jupyter
   - numpy=1.19
-  - opencv=3.4
+  - opencv
   - pillow
   - pip
   - python=3.6

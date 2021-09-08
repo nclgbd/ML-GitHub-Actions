@@ -1,5 +1,6 @@
 #!/bin/bash
 
+GITHUB_HTTPS_ADDRESS=
 ### GITHUB RUNNER SETUP ###
 echo "===Adding AWS Spot Instance==="
 
@@ -21,8 +22,7 @@ echo "Extracting the installer"
 tar xzf ./actions-runner-linux-x64-2.281.1.tar.gz
 
 echo "Creating runner and starting configuration experience"
-./config.sh --url https://github.com/nclgbd/ML-Training-Template --token AJGIW7XIN4QFQWW6J2LMNSDBHB2HS
+./config.sh --url "$GITHUB_HTTPS_ADDRESS" --token AJGIW7XIN4QFQWW6J2LMNSDBHB2HS
 
 echo "Running run.sh"
 ./run.sh
-

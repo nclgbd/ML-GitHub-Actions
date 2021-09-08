@@ -1,1 +1,1 @@
-docker build -t nclgbd/asltrain --no-cache .
+docker build -t nclgbd/githubactions:develop --no-cache .
