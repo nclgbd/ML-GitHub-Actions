@@ -1,0 +1,29 @@
+name: torch_base
+channels:
+  - pytorch
+  - defaults
+dependencies:
+  - cpuonly
+  - cudatoolkit=10.2
+  - jupyter
+  - numpy=1.19
+  - opencv=3.4
+  - pillow
+  - pip
+  - python=3.6
+  - pytorch=1.7.0
+  - scikit-learn
+  - sqlite
+  - torchvision
+  - pip:
+    - bumpversion
+    - dvc
+    - future
+    - mdutils
+    - pandas
+    - pytest
+    - pytorch_vision_utils
+    - scipy
+    - seaborn
+    - tqdm
+    - urllib3

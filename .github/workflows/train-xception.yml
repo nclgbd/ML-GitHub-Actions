@@ -1,0 +1,40 @@
+name: Train Xception
+
+on:
+  push: 
+    branches:
+      [train]
+
+jobs:
+  
+  train:
+    runs-on: ubuntu-latest
+    container: 
+      image: nclgbd/asltrain:develop
+    steps:
+    - uses: actions/checkout@v2
+    - uses: iterative/setup-dvc@v1
+    - name: Build env
+      run: bash scripts/build.sh
+
+    - name: Train model
+      id: train_xception
+      shell: bash -l {0}
+      run: |
+        mkdir -p media/ incorrect_images/ saved_models/
+        ls -a
+        conda activate torch_base
+        echo "::set-output name=sha_short::$(git rev-parse --short HEAD)"
+        python -m pytorch_vision_utils.train --model_name "xception" --parameters_path "parameters.json" --debug "False"
+    # Moving artifacts
+    - name: Move artifacts
+      run: |
+        mv media artifacts/
+        mv saved_models/xception.pth artifacts/
+        mv incorrect_images/ artifacts
+    # Save artifacts
+    - name: Save artifacts
+      uses: actions/upload-artifact@v2
+      with:
+        name: xception_${{ steps.train_xception.outputs.sha_short }}
+        path: artifacts/
