@@ -1,1 +1,1 @@
-docker build -t nclgbd/githubactions:develop --no-cache .
+docker build -t nclgbd/mltraindev:develop --no-cache .

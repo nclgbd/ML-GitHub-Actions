@@ -1,1 +1,1 @@
-docker run -it --rm nclgbd/githubactions:develop
+docker run -it --rm nclgbd/mltraindev:develop
