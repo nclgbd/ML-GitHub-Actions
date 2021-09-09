@@ -9,7 +9,8 @@ on:
 jobs:
   build-and-test-env:
     runs-on: ubuntu-latest
+    # runs-on: self-hosted
     container:
-      image: nclgbd/mltrain:develop
+      image: nclgbd/mltraindev:develop
     steps:
     - uses: actions/checkout@v2

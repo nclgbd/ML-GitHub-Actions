@@ -10,9 +10,9 @@
 # jobs:
   
 #   train:
-#     runs-on: ubuntu-latest
+#     runs-on: self-hosted
 #     container: 
-#       image: nclgbd/asltrain:develop
+#       image: nclgbd/mltraindev:develop
 #     steps:
 #     - uses: actions/checkout@v2
 #     - uses: iterative/setup-dvc@v1
