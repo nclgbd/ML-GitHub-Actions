@@ -10,17 +10,6 @@ jobs:
   build-and-test-env:
     runs-on: ubuntu-latest
     container:
-      image: nclgbd/asltrain:develop
+      image: nclgbd/mltrain:develop
     steps:
     - uses: actions/checkout@v2
-    - uses: iterative/setup-dvc@v1
-    - name: Build env
-      run: bash scripts/build.sh
-
-    - name: Run tests
-      shell: bash -l {0}
-      run: |
-        mkdir -p media/ incorrect_images/ saved_models/
-        ls -la
-        conda activate torch_base
-        pytest -v -s
