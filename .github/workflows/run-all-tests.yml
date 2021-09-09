@@ -9,6 +9,7 @@ on:
 jobs:
   build-and-test-env:
     runs-on: ubuntu-latest
+    # runs-on: self-hosted
     container:
       image: nclgbd/mltraindev:develop
     steps:
