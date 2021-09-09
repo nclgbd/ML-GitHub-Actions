@@ -10,6 +10,6 @@ jobs:
   build-and-test-env:
     runs-on: ubuntu-latest
     container:
-      image: nclgbd/mltrain:develop
+      image: nclgbd/mltraindev:develop
     steps:
     - uses: actions/checkout@v2
