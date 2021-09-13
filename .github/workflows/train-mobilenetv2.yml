@@ -1,21 +1,21 @@
 # Example training script for MobileNet V2
 
-# name: Train Mobilenet V2
+name: Train Mobilenet V2
 
-# on:
-#   push:
-#     branches:
-#       [train]
+on:
+  push:
+    branches:
+      [train, mobilenetv2]
 
-# jobs:
+jobs:
   
-#   train:
-#     runs-on: self-hosted
-#     container: 
-#       image: nclgbd/mltraindev:develop
-#     steps:
-#     - uses: actions/checkout@v2
-#     - uses: iterative/setup-dvc@v1
+  train:
+    runs-on: self-hosted
+    container: 
+      image: nclgbd/mltraindev:develop
+    steps:
+    - uses: actions/checkout@v2
+    - uses: iterative/setup-dvc@v1
 #     - name: Build env
 #       run: bash scripts/build.sh
 
