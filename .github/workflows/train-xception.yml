@@ -1,21 +1,21 @@
 # Example training script for Xception
 
-# name: Train Xception
+name: Train Xception
 
-# on:
-#   push: 
-#     branches:
-#       [train]
+on:
+  push: 
+    branches:
+      [train, xception]
 
-# jobs:
+jobs:
   
-#   train:
-#     runs-on: self-hosted
-#     container: 
-#       image: nclgbd/mltraindev:develop
-#     steps:
-#     - uses: actions/checkout@v2
-#     - uses: iterative/setup-dvc@v1
+  train:
+    runs-on: self-hosted
+    container: 
+      image: nclgbd/mltraindev:develop
+    steps:
+    - uses: actions/checkout@v2
+    - uses: iterative/setup-dvc@v1
 #     - name: Build env
 #       run: bash scripts/build.sh
 
